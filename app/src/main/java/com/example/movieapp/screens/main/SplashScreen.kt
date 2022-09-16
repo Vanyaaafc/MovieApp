@@ -1,4 +1,4 @@
-package com.example.movieapp.Fragments
+package com.example.movieapp.screens.main
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -39,9 +39,6 @@ class SplashScreen : Fragment() {
             if(isNetworkAvailable(requireActivity())){
                 findNavController().navigate(R.id.action_splashScreen_to_homeFragment)
             }
-//            else if(isNetworkAvailable(requireActivity())){
-//                findNavController().navigate(R.id.action_noInternet_to_homeFragment)
-//            }
             else{
                 findNavController().navigate(R.id.action_splashScreen_to_noInternet)
                 Toast.makeText(requireActivity(), "Нет подключения к интернету", Toast.LENGTH_LONG).show()

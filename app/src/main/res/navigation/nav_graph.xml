@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashScreen"
-        android:name="com.example.movieapp.Fragments.SplashScreen"
+        android:name="com.example.movieapp.screens.main.SplashScreen"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.movieapp.Fragments.HomeFragment"
+        android:name="com.example.movieapp.screens.main.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/noInternet"
-        android:name="com.example.movieapp.Fragments.NoInternet"
+        android:name="com.example.movieapp.screens.main.NoInternet"
         android:label="fragment_no_internet"
         tools:layout="@layout/fragment_no_internet" >
         <action
