@@ -44,7 +44,6 @@ class SplashScreen : Fragment() {
                 Toast.makeText(requireActivity(), "Нет подключения к интернету", Toast.LENGTH_LONG).show()
         }
         }, 1500)
-
         return view
     }
 }

@@ -6,12 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
-import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentDetailBinding
-import com.example.movieapp.databinding.FragmentMainBinding
-import com.example.movieapp.screens.favorite.FavoriteFragmentViewModel
-import com.example.movieapp.screens.main.MainAdapter
 
 class DetailFragment : Fragment() {
 

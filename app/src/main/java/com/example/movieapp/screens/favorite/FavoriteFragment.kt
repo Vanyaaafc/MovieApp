@@ -7,11 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentFavoriteBinding
-import com.example.movieapp.databinding.FragmentMainBinding
 import com.example.movieapp.screens.main.MainAdapter
-import com.example.movieapp.screens.main.MainFragmentViewModel
 
 class FavoriteFragment : Fragment() {
 

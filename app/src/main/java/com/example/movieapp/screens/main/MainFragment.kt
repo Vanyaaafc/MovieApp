@@ -1,14 +1,15 @@
 package com.example.movieapp.screens.main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentMainBinding
+import java.lang.Exception
 
 class MainFragment : Fragment() {
 
@@ -32,9 +33,18 @@ class MainFragment : Fragment() {
 
     private fun init() {
         val viewModel = ViewModelProvider(this).get(MainFragmentViewModel::class.java)
+        viewModel.getMovies()
         recyclerView  = binding.rvMain
         recyclerView.adapter = adapter
+        try {
+            viewModel.getMovies()
+        viewModel.myMovies.observe(viewLifecycleOwner) { list ->
+            adapter.setList(list.body()!!.results)
+        }
 
+        }catch (e: Exception){
+        Log.e("ERROR", e.message.toString())
+        }
     }
 
     override fun onDestroy() {
