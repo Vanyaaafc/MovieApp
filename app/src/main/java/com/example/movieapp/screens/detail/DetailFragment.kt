@@ -1,5 +1,6 @@
 package com.example.movieapp.screens.detail
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,19 +32,21 @@ class DetailFragment : Fragment() {
         init()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun init() {
         val viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
         Glide.with(MAIN)
-            .load(currentMovie.poster_path)
-            .centerCrop()
+            .load("https://www.themoviedb.org/t/p/w600_and_h900_bestv2${currentMovie.poster_path }")
             .placeholder(R.drawable.ic_launcher_foreground)
             .into(binding.imgDetail)
 
         binding.toolbar.setNavigationOnClickListener {
             MAIN.navController.popBackStack()
-
         }
         binding.toolbar.title = currentMovie.title
+        binding.tvTitle.text = currentMovie.title
+        binding.tvData.text = currentMovie.release_date
+        binding.tvDescription.text = "\t${currentMovie.overview}"
     }
 
     override fun onDestroy() {
