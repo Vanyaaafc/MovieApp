@@ -13,7 +13,7 @@ import com.example.movieapp.models.MovieItemModel
 
 class MainFragment : Fragment() {
 
-    private var mBinding: FragmentMainBinding ?= null
+    private var mBinding: FragmentMainBinding?= null
     private val binding get() = mBinding!!
     lateinit var recyclerView: RecyclerView
     private val adapter by lazy { MainAdapter() }
@@ -38,6 +38,10 @@ class MainFragment : Fragment() {
         viewModel.getMovies()
         recyclerView  = binding.rvMain
         recyclerView.adapter = adapter
+        binding.toolbar.menu.findItem(R.id.item_favorite).setOnMenuItemClickListener {
+            MAIN.navController.navigate(R.id.action_homeFragment_to_favoriteFragment)
+            true
+        }
         try {
             viewModel.getMovies()
         viewModel.myMovies.observe(viewLifecycleOwner) { list ->
@@ -53,23 +57,7 @@ class MainFragment : Fragment() {
         super.onDestroyView()
         mBinding = null
     }
-
-    @Deprecated("Deprecated in Java")
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.main_menu, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    @Deprecated("Deprecated in Java")
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId){
-            R.id.item_favorite -> {
-                MAIN.navController.navigate(R.id.action_homeFragment_to_favoriteFragment)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+    
     companion object {
         fun clickMovie(model: MovieItemModel){
          val bundle = Bundle()

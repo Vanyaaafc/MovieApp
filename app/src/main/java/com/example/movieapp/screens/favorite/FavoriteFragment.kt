@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.example.movieapp.MAIN
 import com.example.movieapp.databinding.FragmentFavoriteBinding
 import com.example.movieapp.screens.main.MainAdapter
+import kotlinx.android.synthetic.main.fragment_detail.view.*
 
 class FavoriteFragment : Fragment() {
 
@@ -35,7 +37,9 @@ class FavoriteFragment : Fragment() {
         val viewModel = ViewModelProvider(this).get(FavoriteFragmentViewModel::class.java)
         recyclerView  = binding.rvFavorite
         recyclerView.adapter = adapter
-
+        binding.toolbar.setNavigationOnClickListener {
+            MAIN.navController.popBackStack()
+        }
     }
 
     override fun onDestroy() {

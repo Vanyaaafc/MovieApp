@@ -41,7 +41,9 @@ class DetailFragment : Fragment() {
 
         binding.toolbar.setNavigationOnClickListener {
             MAIN.navController.popBackStack()
+
         }
+        binding.toolbar.title = currentMovie.title
     }
 
     override fun onDestroy() {

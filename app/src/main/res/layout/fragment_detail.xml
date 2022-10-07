@@ -8,7 +8,7 @@
     tools:context=".screens.detail.DetailFragment">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appBar"
+        android:id="@+id/appBar_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,7 +17,7 @@
             android:id="@+id/toolbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:navigationIcon="@drawable/ic_baseline_keyboard_backspace"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
             app:title="Detail Screen"
             app:titleTextColor="@color/white"
             />
@@ -30,7 +30,7 @@
         android:layout_height="250dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_constraintTop_toBottomOf="@id/appBar_detail"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
 
