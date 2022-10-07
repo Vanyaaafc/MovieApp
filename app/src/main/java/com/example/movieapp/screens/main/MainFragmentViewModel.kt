@@ -18,7 +18,7 @@ class MainFragmentViewModel: ViewModel() {
         viewModelScope.launch {
             try {
                 myMovies.value = repository.getMovies()
-            } catch (e: Exception) {
+            } catch (e: Throwable) {
                 Log.e("ERROR", e.message.toString())
             }
         }

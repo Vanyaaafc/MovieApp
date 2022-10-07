@@ -1,5 +1,6 @@
 package com.example.movieapp.screens.main
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,8 +37,20 @@ class MainAdapter: RecyclerView.Adapter<MainAdapter.MyViewHolder>() {
         return listMovies.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setList(list: List<MovieItemModel>){
         listMovies = list
         notifyDataSetChanged()
+    }
+
+    override fun onViewAttachedToWindow(holder: MyViewHolder) {
+        super.onViewAttachedToWindow(holder)
+        holder.itemView.setOnClickListener {
+            MainFragment.clickMovie(listMovies[holder.adapterPosition])
+        }
+    }
+
+    override fun onViewDetachedFromWindow(holder: MyViewHolder) {
+        holder.itemView.setOnClickListener(null)
     }
 }

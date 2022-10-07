@@ -43,7 +43,7 @@ class SplashScreen : Fragment() {
                 findNavController().navigate(R.id.action_splashScreen_to_noInternet)
                 Toast.makeText(requireActivity(), "Нет подключения к интернету", Toast.LENGTH_LONG).show()
         }
-        }, 1500)
+        }, 1000)
         return view
     }
 }
