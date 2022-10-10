@@ -18,6 +18,7 @@ class DetailFragment : Fragment() {
     private var mBinding: FragmentDetailBinding?= null
     private val binding get() = mBinding!!
     lateinit var currentMovie: MovieItemModel
+    private var isFavorite = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +48,16 @@ class DetailFragment : Fragment() {
         binding.tvTitle.text = currentMovie.title
         binding.tvData.text = currentMovie.release_date
         binding.tvDescription.text = "\t${currentMovie.overview}"
+
+        binding.imgDetailFavorite.setOnClickListener {
+            if(!isFavorite){
+                binding.imgDetailFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
+                isFavorite = true
+            }else{
+                binding.imgDetailFavorite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                isFavorite = false
+            }
+        }
     }
 
     override fun onDestroy() {

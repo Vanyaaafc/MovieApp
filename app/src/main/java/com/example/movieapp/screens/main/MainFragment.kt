@@ -15,7 +15,7 @@ class MainFragment : Fragment() {
 
     private var mBinding: FragmentMainBinding?= null
     private val binding get() = mBinding!!
-    lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
     private val adapter by lazy { MainAdapter() }
 
     override fun onCreateView(
@@ -35,7 +35,8 @@ class MainFragment : Fragment() {
 
     private fun init() {
         val viewModel = ViewModelProvider(this).get(MainFragmentViewModel::class.java)
-        viewModel.getMovies()
+        viewModel.getMoviesRetrofit()
+        viewModel.initDatabase()
         recyclerView  = binding.rvMain
         recyclerView.adapter = adapter
         binding.toolbar.menu.findItem(R.id.item_favorite).setOnMenuItemClickListener {
@@ -43,7 +44,7 @@ class MainFragment : Fragment() {
             true
         }
         try {
-            viewModel.getMovies()
+            viewModel.getMoviesRetrofit()
         viewModel.myMovies.observe(viewLifecycleOwner) { list ->
             adapter.setList(list.body()!!.results)
         }
