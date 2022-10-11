@@ -14,11 +14,12 @@ import com.example.movieapp.SaveShared
 import com.example.movieapp.databinding.FragmentDetailBinding
 import com.example.movieapp.models.MovieItemModel
 
+@Suppress("DEPRECATION")
 class DetailFragment : Fragment() {
 
     private var mBinding: FragmentDetailBinding?= null
     private val binding get() = mBinding!!
-    lateinit var currentMovie: MovieItemModel
+    private lateinit var currentMovie: MovieItemModel
     private var isFavorite = false
 
     override fun onCreateView(
@@ -37,7 +38,7 @@ class DetailFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     private fun init() {
         val valueBool = SaveShared.getFavorite(MAIN, currentMovie.id.toString())
-        val viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        val viewModel = ViewModelProvider(this)[DetailViewModel::class.java]
 
         if(isFavorite != valueBool){
             binding.imgDetailFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
@@ -59,16 +60,16 @@ class DetailFragment : Fragment() {
         binding.tvDescription.text = "\t${currentMovie.overview}"
 
         binding.imgDetailFavorite.setOnClickListener {
-            if(isFavorite == valueBool){
+            isFavorite = if(isFavorite == valueBool){
                 binding.imgDetailFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
                 SaveShared.setFavorite(MAIN, currentMovie.id.toString(), true)
                 viewModel.insert(currentMovie){}
-                isFavorite = true
+                true
             }else{
                 binding.imgDetailFavorite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
                 SaveShared.setFavorite(MAIN, currentMovie.id.toString(), false)
                 viewModel.delete(currentMovie){}
-                isFavorite = false
+                false
             }
         }
     }

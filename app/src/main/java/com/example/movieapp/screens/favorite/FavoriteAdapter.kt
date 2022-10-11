@@ -1,3 +1,5 @@
+@file:Suppress("androidUnsupportedFeature")
+
 package com.example.movieapp.screens.favorite
 
 import android.annotation.SuppressLint
@@ -9,7 +11,6 @@ import com.bumptech.glide.Glide
 import com.example.movieapp.MAIN
 import com.example.movieapp.R
 import com.example.movieapp.models.MovieItemModel
-import com.example.movieapp.screens.main.MainFragment
 import kotlinx.android.synthetic.main.item_layout.view.*
 
 class FavoriteAdapter: RecyclerView.Adapter<FavoriteAdapter.MyViewHolder>() {

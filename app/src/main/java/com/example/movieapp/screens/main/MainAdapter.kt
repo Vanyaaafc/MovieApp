@@ -1,3 +1,5 @@
+@file:Suppress("androidUnsupportedFeature")
+
 package com.example.movieapp.screens.main
 
 import android.annotation.SuppressLint

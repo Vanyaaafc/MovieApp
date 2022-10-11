@@ -11,6 +11,7 @@ import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentMainBinding
 import com.example.movieapp.models.MovieItemModel
 
+@Suppress("DEPRECATION")
 class MainFragment : Fragment() {
 
     private var mBinding: FragmentMainBinding?= null
@@ -34,7 +35,7 @@ class MainFragment : Fragment() {
     }
 
     private fun init() {
-        val viewModel = ViewModelProvider(this).get(MainFragmentViewModel::class.java)
+        val viewModel = ViewModelProvider(this)[MainFragmentViewModel::class.java]
         viewModel.getMoviesRetrofit()
         viewModel.initDatabase()
         recyclerView  = binding.rvMain

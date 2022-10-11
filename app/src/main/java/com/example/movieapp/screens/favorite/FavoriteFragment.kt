@@ -11,14 +11,12 @@ import com.example.movieapp.MAIN
 import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentFavoriteBinding
 import com.example.movieapp.models.MovieItemModel
-import com.example.movieapp.screens.main.MainAdapter
-import kotlinx.android.synthetic.main.fragment_detail.view.*
 
 class FavoriteFragment : Fragment() {
 
     private var mBinding: FragmentFavoriteBinding ?= null
     private val binding get() = mBinding!!
-    lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: RecyclerView
     private val adapter by lazy { FavoriteAdapter() }
 
     override fun onCreateView(
@@ -36,7 +34,7 @@ class FavoriteFragment : Fragment() {
     }
 
     private fun init() {
-        val viewModel = ViewModelProvider(this).get(FavoriteFragmentViewModel::class.java)
+        val viewModel = ViewModelProvider(this)[FavoriteFragmentViewModel::class.java]
         viewModel.getAllMovies().observe(viewLifecycleOwner) { list ->
             adapter.setList(list.asReversed())
         }

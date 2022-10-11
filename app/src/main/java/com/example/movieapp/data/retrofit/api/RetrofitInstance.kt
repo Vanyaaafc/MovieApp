@@ -3,7 +3,6 @@ package com.example.movieapp.data.retrofit.api
 import com.example.movieapp.BASE_URL
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 object RetrofitInstance {
  private val retrofit by lazy {

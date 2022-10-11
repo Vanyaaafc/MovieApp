@@ -15,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.movieapp.R
 
 
+@Suppress("DEPRECATION")
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : Fragment() {
 
