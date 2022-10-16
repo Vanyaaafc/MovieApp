@@ -3,24 +3,32 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_day.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1515" />
+        <entry key="app/src/main/res/drawable/ic_baseline_favorite_24_main.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1515" />
         <entry key="app/src/main/res/drawable/ic_baseline_keyboard_backspace.xml" value="0.1865" />
+        <entry key="app/src/main/res/drawable/ic_baseline_settings_24_main.xml" value="0.132" />
+        <entry key="app/src/main/res/drawable/ic_baseline_wb_sunny_24.xml" value="0.132" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/rounded.xml" value="0.1515" />
+        <entry key="app/src/main/res/drawable/rounded_dialog.xml" value="0.132" />
         <entry key="app/src/main/res/font/calistoga.xml" value="0.28055555555555556" />
         <entry key="app/src/main/res/font/mclaren.xml" value="0.28055555555555556" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.30194918867470566" />
-        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.24857394453408077" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.24804763679903546" />
         <entry key="app/src/main/res/layout/fragment_favorite.xml" value="0.41005380264835656" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19610507246376813" />
-        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/fragment_main.xml" value="0.24293429609658063" />
         <entry key="app/src/main/res/layout/fragment_no_internet.xml" value="0.3123892521512681" />
         <entry key="app/src/main/res/layout/fragment_screen.xml" value="0.19610507246376813" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.27170321699501815" />
         <entry key="app/src/main/res/layout/item_layout.xml" value="0.30604464765908057" />
-        <entry key="app/src/main/res/menu/main_menu.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/locales_config.xml" value="0.21557971014492755" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.2669942220052083" />
+        <entry key="app/src/main/res/xml/locales_config.xml" value="0.21557971014492755" />
         <entry key="presentation/src/main/res/layout/activity_main.xml" value="0.19610507246376813" />
         <entry key="presentation/src/main/res/layout/activity_splash_screen.xml" value="0.26180026289345565" />
         <entry key="presentation/src/main/res/layout/fragment_splash_screen.xml" value="0.19610507246376813" />
@@ -32,5 +40,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.24857394453408077" />
+      </ProjectState>
+    </option>
   </component>
 </project>

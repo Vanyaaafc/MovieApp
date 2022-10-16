@@ -5,6 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/colorbackground"
     tools:context=".screens.main.MainFragment">
 
 
@@ -13,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:liftOnScroll="true">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
@@ -21,7 +24,7 @@
             android:layout_height="wrap_content"
             app:menu="@menu/main_menu"
             app:title="Movie App"
-            app:titleTextColor="@color/white" />
+            app:titleTextColor="@color/black" />
     </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -35,7 +38,6 @@
         app:layout_constraintTop_toBottomOf="@+id/appBar_main"
         tools:itemCount="3"
         tools:listitem="@layout/item_layout" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
