@@ -3,20 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/item_day"
+        android:id="@+id/item_favorite"
+        android:icon="@drawable/ic_baseline_favorite_24_main"
         android:title=""
-        android:icon="@drawable/ic_baseline_wb_sunny_24"
-        app:showAsAction="always"/>
-    <item
-    android:id="@+id/item_favorite"
-    android:icon="@drawable/ic_baseline_favorite_24_main"
-    android:title=""
-    app:showAsAction="always"/>
-    <item
-        android:id="@+id/item_settings"
-        android:title=""
-        android:icon="@drawable/ic_baseline_settings_24_main"
-        app:showAsAction="always"/>
+        app:showAsAction="always" />
+
 
 
 

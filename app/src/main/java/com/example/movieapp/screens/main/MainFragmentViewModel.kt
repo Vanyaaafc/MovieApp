@@ -31,4 +31,5 @@ class MainFragmentViewModel(application: Application): AndroidViewModel(applicat
         val dataMovie = MoviesRoomDataBase.getInstance(context).getMovieDao()
         REALIZATION = MoviesRepositoryRealisation(dataMovie)
     }
+
 }

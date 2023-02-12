@@ -1,8 +1,13 @@
-<resources>
-    <string name="app_name">Movie App</string>
-    <string name="textView">Welcome to Movie App</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" translatable="false">Movie App</string>
+    <string name="textView" translatable="false">Welcome to Movie App</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="splash_text">Movie App</string>
+    <string name="splash_text" translatable="false">Movie App</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-</resources>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="ui_mode" translatable="false">UI Mode</string>
+    <string name="app_name_detail"
+            tools:ignore="MissingTranslation">Detail fragment</string>
+
+
+    </resources>

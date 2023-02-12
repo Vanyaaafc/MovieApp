@@ -11,23 +11,26 @@ import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentMainBinding
 import com.example.movieapp.models.MovieItemModel
 
+
 @Suppress("DEPRECATION")
 class MainFragment : Fragment() {
 
-    private var mBinding: FragmentMainBinding?= null
+    private var mBinding: FragmentMainBinding? = null
     private val binding get() = mBinding!!
     private lateinit var recyclerView: RecyclerView
     private val adapter by lazy { MainAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
 
-    ): View {
+        ): View {
         mBinding = FragmentMainBinding.inflate(layoutInflater, container, false)
         setHasOptionsMenu(true)
         return binding.root
+
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -38,7 +41,7 @@ class MainFragment : Fragment() {
         val viewModel = ViewModelProvider(this)[MainFragmentViewModel::class.java]
         viewModel.getMoviesRetrofit()
         viewModel.initDatabase()
-        recyclerView  = binding.rvMain
+        recyclerView = binding.rvMain
         recyclerView.adapter = adapter
         binding.toolbar.menu.findItem(R.id.item_favorite).setOnMenuItemClickListener {
             MAIN.navController.navigate(R.id.action_homeFragment_to_favoriteFragment)
@@ -46,12 +49,12 @@ class MainFragment : Fragment() {
         }
         try {
             viewModel.getMoviesRetrofit()
-        viewModel.myMovies.observe(viewLifecycleOwner) { list ->
-            adapter.setList(list.body()!!.results)
-        }
+            viewModel.myMovies.observe(viewLifecycleOwner) { list ->
+                adapter.setList(list.body()!!.results)
+            }
 
-        }catch (e: Throwable){
-        Log.e("ERROR", e.message.toString())
+        } catch (e: Throwable) {
+            Log.e("ERROR", e.message.toString())
         }
     }
 
@@ -59,12 +62,21 @@ class MainFragment : Fragment() {
         super.onDestroyView()
         mBinding = null
     }
-    
+
     companion object {
-        fun clickMovie(model: MovieItemModel){
-         val bundle = Bundle()
-         bundle.putSerializable("movie", model)
+        fun clickMovie(model: MovieItemModel) {
+            val bundle = Bundle()
+            bundle.putSerializable("movie", model)
             MAIN.navController.navigate(R.id.action_homeFragment_to_detailFragment, bundle)
+//            val locale = Locale("uk")
+//            Locale.setDefault(locale)
+//            val resources: Resources = MAIN.resources
+//            val config: Configuration = resources.getConfiguration()
+//            config.setLocale(locale)
+//            resources.updateConfiguration(config, resources.getDisplayMetrics())
         }
     }
-}
+
+
+    }
+

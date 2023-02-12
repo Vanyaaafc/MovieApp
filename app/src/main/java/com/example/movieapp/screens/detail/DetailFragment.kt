@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.movieapp.MAIN
@@ -64,11 +65,13 @@ class DetailFragment : Fragment() {
                 binding.imgDetailFavorite.setImageResource(R.drawable.ic_baseline_favorite_24)
                 SaveShared.setFavorite(MAIN, currentMovie.id.toString(), true)
                 viewModel.insert(currentMovie){}
+                Toast.makeText(requireActivity(), "Add to favorite" , Toast.LENGTH_SHORT).show()
                 true
             }else{
                 binding.imgDetailFavorite.setImageResource(R.drawable.ic_baseline_favorite_border_24)
                 SaveShared.setFavorite(MAIN, currentMovie.id.toString(), false)
                 viewModel.delete(currentMovie){}
+                Toast.makeText(requireActivity(), "Removed from favorite" , Toast.LENGTH_SHORT).show()
                 false
             }
         }
